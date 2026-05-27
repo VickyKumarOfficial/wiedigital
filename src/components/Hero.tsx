@@ -1,43 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
-
-type NavItem = {
-  name: string
-  href: string
-}
-
-type CustomerLogo = {
-  name: string
-  src: string
-  height: string
-}
-
-const navItems: NavItem[] = [
-  { name: 'Features', href: '#features' },
-  { name: 'Solution', href: '#solution' },
-  { name: 'Pricing', href: '#pricing' },
-  { name: 'About', href: '#about' },
-]
-
-const customerLogos: CustomerLogo[] = [
-  { name: 'Nvidia', src: 'https://html.tailus.io/blocks/customers/nvidia.svg', height: 'h-5' },
-  { name: 'Column', src: 'https://html.tailus.io/blocks/customers/column.svg', height: 'h-4' },
-  { name: 'GitHub', src: 'https://html.tailus.io/blocks/customers/github.svg', height: 'h-4' },
-  { name: 'Nike', src: 'https://html.tailus.io/blocks/customers/nike.svg', height: 'h-5' },
-  {
-    name: 'Lemon Squeezy',
-    src: 'https://html.tailus.io/blocks/customers/lemonsqueezy.svg',
-    height: 'h-5',
-  },
-  { name: 'Laravel', src: 'https://html.tailus.io/blocks/customers/laravel.svg', height: 'h-4' },
-  { name: 'Lilly', src: 'https://html.tailus.io/blocks/customers/lilly.svg', height: 'h-7' },
-  { name: 'OpenAI', src: 'https://html.tailus.io/blocks/customers/openai.svg', height: 'h-6' },
-]
-
-const images = {
-  background:
-    'https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120',
-  dashboard: 'https://tailark.com//_next/image?url=%2Fmail2.png&w=3840&q=75',
-}
+import { useEffect, useMemo, useState } from 'react'
+import { heroImages, navItems } from '../data/home'
 
 const rotatingTitleWords = ['products', 'design', 'experiences', 'talent']
 
@@ -110,96 +72,6 @@ function RotatingTitleWord() {
   )
 }
 
-function PartnersMarquee() {
-  const trackRef = useRef<HTMLDivElement>(null)
-  const stripRef = useRef<HTMLDivElement>(null)
-  const offsetRef = useRef(0)
-  const speedRef = useRef(42)
-  const targetSpeedRef = useRef(42)
-  const stripWidthRef = useRef(0)
-
-  useEffect(() => {
-    let animationFrameId = 0
-    let previousTime = performance.now()
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-    const measure = () => {
-      stripWidthRef.current = stripRef.current?.scrollWidth ?? 0
-    }
-
-    const animate = (time: number) => {
-      const delta = Math.min(time - previousTime, 48)
-      previousTime = time
-      const track = trackRef.current
-      const stripWidth = stripWidthRef.current
-
-      if (track && stripWidth > 0 && !reduceMotion) {
-        speedRef.current += (targetSpeedRef.current - speedRef.current) * 0.075
-        offsetRef.current += speedRef.current * (delta / 1000)
-
-        if (offsetRef.current >= stripWidth) {
-          offsetRef.current -= stripWidth
-        }
-
-        track.style.transform = `translate3d(${-offsetRef.current}px, 0, 0)`
-      }
-
-      animationFrameId = window.requestAnimationFrame(animate)
-    }
-
-    measure()
-    window.addEventListener('resize', measure)
-    animationFrameId = window.requestAnimationFrame(animate)
-
-    return () => {
-      window.removeEventListener('resize', measure)
-      window.cancelAnimationFrame(animationFrameId)
-    }
-  }, [])
-
-  const setTargetSpeed = (speed: number) => {
-    targetSpeedRef.current = speed
-  }
-
-  return (
-    <section className="relative mx-auto w-[80%] min-w-0 py-16 text-center md:py-24">
-      <p className="text-sm font-medium tracking-wide text-zinc-400">
-        Collaborated with forward-thinking teams
-      </p>
-
-      <div className="relative mt-10 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
-        <div ref={trackRef} className="flex w-max items-center will-change-transform">
-          {[0, 1].map((groupIndex) => (
-            <div
-              className="flex shrink-0 items-center gap-14 px-7 md:gap-20 md:px-10"
-              key={groupIndex}
-              ref={groupIndex === 0 ? stripRef : undefined}
-            >
-              {customerLogos.map((logo) => (
-                <div
-                  className="group/logo flex h-14 min-w-36 items-center justify-center rounded-2xl border border-white/[0.04] bg-white/[0.015] px-6 transition duration-300 hover:border-white/[0.1] hover:bg-white/[0.045]"
-                  key={`${groupIndex}-${logo.name}`}
-                  onMouseEnter={() => setTargetSpeed(0)}
-                  onMouseLeave={() => setTargetSpeed(42)}
-                  onFocus={() => setTargetSpeed(0)}
-                  onBlur={() => setTargetSpeed(42)}
-                  tabIndex={0}
-                >
-                  <img
-                    className={`${logo.height} w-auto max-w-32 object-contain opacity-45 invert grayscale transition duration-300 group-hover/logo:opacity-75`}
-                    src={logo.src}
-                    alt={`${logo.name} logo`}
-                  />
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 export default function Hero() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -243,7 +115,7 @@ export default function Hero() {
 
       <img
         className="pointer-events-none absolute top-64 left-1/2 z-0 hidden w-[130rem] max-w-none -translate-x-1/2 opacity-25 [mask-image:linear-gradient(180deg,transparent_0%,black_20%,black_62%,transparent_100%)] lg:block"
-        src={images.background}
+        src={heroImages.background}
         alt=""
         aria-hidden="true"
       />
@@ -382,7 +254,7 @@ export default function Hero() {
             <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/[0.12] bg-[#09090b] p-4 shadow-2xl shadow-black/[0.45] ring-1 ring-white/[0.08]">
               <img
                 className="aspect-[15/8] w-full rounded-2xl border border-white/[0.08] object-cover object-top"
-                src={images.dashboard}
+                src={heroImages.dashboard}
                 alt="Customer engagement dashboard preview"
                 width="2700"
                 height="1440"
@@ -390,8 +262,6 @@ export default function Hero() {
             </div>
           </div>
         </section>
-
-        <PartnersMarquee />
       </main>
     </div>
   )
