@@ -1,4 +1,5 @@
 import CTASection from './components/CTASection'
+import Footer from './components/Footer'
 import Hero from './components/Hero'
 import OutcomeStrip from './components/OutcomeStrip'
 import PartnersMarquee from './components/PartnersMarquee'
@@ -12,6 +13,7 @@ export default function App() {
       <CTASection />
       <ValueSection />
       <OutcomeStrip />
+      <Footer />
     </div>
   )
 }
