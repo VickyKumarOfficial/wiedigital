@@ -1,8 +1,207 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { heroImages, navItems } from '../data/home'
 import ContainerScrollAnimation from './ContainerScrollAnimation'
 
 const rotatingTitleWords = ['products', 'design', 'experiences', 'talent']
+
+interface Dot {
+  x: number
+  y: number
+  targetOpacity: number
+  currentOpacity: number
+  opacitySpeed: number
+  baseRadius: number
+  currentRadius: number
+}
+
+const DOT_SPACING = 25
+const BASE_OPACITY_MIN = 0.16
+const BASE_OPACITY_MAX = 0.28
+const BASE_RADIUS = 0.85
+const INTERACTION_RADIUS = 150
+const INTERACTION_RADIUS_SQ = INTERACTION_RADIUS * INTERACTION_RADIUS
+const OPACITY_BOOST = 0.56
+const RADIUS_BOOST = 2.01
+const GRID_CELL_SIZE = Math.max(50, Math.floor(INTERACTION_RADIUS / 1.5))
+const BASE_DOT_RGB = { r: 126, g: 129, b: 145 }
+const HOVER_DOT_RGB = { r: 246, g: 247, b: 255 }
+
+function DottedHeroBackground() {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const dotsRef = useRef<Dot[]>([])
+  const gridRef = useRef<Record<string, number[]>>({})
+  const canvasSizeRef = useRef({ width: 0, height: 0 })
+  const mousePositionRef = useRef<{ x: number | null; y: number | null }>({ x: null, y: null })
+  const animationFrameId = useRef<number | null>(null)
+
+  const createDots = useCallback(() => {
+    const { width, height } = canvasSizeRef.current
+    if (width === 0 || height === 0) return
+
+    const newDots: Dot[] = []
+    const newGrid: Record<string, number[]> = {}
+    const cols = Math.ceil(width / DOT_SPACING)
+    const rows = Math.ceil(height / DOT_SPACING)
+
+    for (let i = 0; i < cols; i += 1) {
+      for (let j = 0; j < rows; j += 1) {
+        const x = i * DOT_SPACING + DOT_SPACING / 2
+        const y = j * DOT_SPACING + DOT_SPACING / 2
+        const cellX = Math.floor(x / GRID_CELL_SIZE)
+        const cellY = Math.floor(y / GRID_CELL_SIZE)
+        const cellKey = `${cellX}_${cellY}`
+
+        if (!newGrid[cellKey]) {
+          newGrid[cellKey] = []
+        }
+
+        newGrid[cellKey].push(newDots.length)
+
+        const baseOpacity = Math.random() * (BASE_OPACITY_MAX - BASE_OPACITY_MIN) + BASE_OPACITY_MIN
+        newDots.push({
+          x,
+          y,
+          targetOpacity: baseOpacity,
+          currentOpacity: baseOpacity,
+          opacitySpeed: Math.random() * 0.005 + 0.002,
+          baseRadius: BASE_RADIUS,
+          currentRadius: BASE_RADIUS,
+        })
+      }
+    }
+
+    dotsRef.current = newDots
+    gridRef.current = newGrid
+  }, [])
+
+  const handleResize = useCallback(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+
+    const container = canvas.parentElement
+    const width = container ? container.clientWidth : window.innerWidth
+    const height = container ? container.clientHeight : window.innerHeight
+
+    if (canvas.width !== width || canvas.height !== height || canvasSizeRef.current.width !== width || canvasSizeRef.current.height !== height) {
+      canvas.width = width
+      canvas.height = height
+      canvasSizeRef.current = { width, height }
+      createDots()
+    }
+  }, [createDots])
+
+  const handleMouseMove = useCallback((event: MouseEvent) => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+
+    const rect = canvas.getBoundingClientRect()
+    const x = event.clientX - rect.left
+    const y = event.clientY - rect.top
+
+    mousePositionRef.current = x >= 0 && x <= rect.width && y >= 0 && y <= rect.height ? { x, y } : { x: null, y: null }
+  }, [])
+
+  const handleMouseLeave = useCallback(() => {
+    mousePositionRef.current = { x: null, y: null }
+  }, [])
+
+  const animateDots = useCallback(function runAnimationFrame() {
+    const canvas = canvasRef.current
+    const ctx = canvas?.getContext('2d')
+    const dots = dotsRef.current
+    const grid = gridRef.current
+    const { width, height } = canvasSizeRef.current
+    const { x: mouseX, y: mouseY } = mousePositionRef.current
+
+    if (!ctx || width === 0 || height === 0) {
+      animationFrameId.current = requestAnimationFrame(runAnimationFrame)
+      return
+    }
+
+    ctx.clearRect(0, 0, width, height)
+
+    const activeDotIndices = new Set<number>()
+    if (mouseX !== null && mouseY !== null) {
+      const mouseCellX = Math.floor(mouseX / GRID_CELL_SIZE)
+      const mouseCellY = Math.floor(mouseY / GRID_CELL_SIZE)
+      const searchRadius = Math.ceil(INTERACTION_RADIUS / GRID_CELL_SIZE)
+
+      for (let i = -searchRadius; i <= searchRadius; i += 1) {
+        for (let j = -searchRadius; j <= searchRadius; j += 1) {
+          const cellKey = `${mouseCellX + i}_${mouseCellY + j}`
+          grid[cellKey]?.forEach((dotIndex) => activeDotIndices.add(dotIndex))
+        }
+      }
+    }
+
+    dots.forEach((dot, index) => {
+      dot.currentOpacity += dot.opacitySpeed
+
+      if (dot.currentOpacity >= dot.targetOpacity || dot.currentOpacity <= BASE_OPACITY_MIN) {
+        dot.opacitySpeed = -dot.opacitySpeed
+        dot.currentOpacity = Math.max(BASE_OPACITY_MIN, Math.min(dot.currentOpacity, BASE_OPACITY_MAX))
+        dot.targetOpacity = Math.random() * (BASE_OPACITY_MAX - BASE_OPACITY_MIN) + BASE_OPACITY_MIN
+      }
+
+      let interactionFactor = 0
+      dot.currentRadius = dot.baseRadius
+
+      if (mouseX !== null && mouseY !== null && activeDotIndices.has(index)) {
+        const dx = dot.x - mouseX
+        const dy = dot.y - mouseY
+        const distSq = dx * dx + dy * dy
+
+        if (distSq < INTERACTION_RADIUS_SQ) {
+          const distance = Math.sqrt(distSq)
+          interactionFactor = Math.max(0, 1 - distance / INTERACTION_RADIUS)
+          interactionFactor *= interactionFactor
+        }
+      }
+
+      const finalOpacity = Math.min(0.9, dot.currentOpacity + interactionFactor * OPACITY_BOOST)
+      dot.currentRadius = dot.baseRadius + interactionFactor * RADIUS_BOOST
+
+      const r = Math.round(BASE_DOT_RGB.r + (HOVER_DOT_RGB.r - BASE_DOT_RGB.r) * interactionFactor)
+      const g = Math.round(BASE_DOT_RGB.g + (HOVER_DOT_RGB.g - BASE_DOT_RGB.g) * interactionFactor)
+      const b = Math.round(BASE_DOT_RGB.b + (HOVER_DOT_RGB.b - BASE_DOT_RGB.b) * interactionFactor)
+
+      ctx.beginPath()
+      ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${finalOpacity.toFixed(3)})`
+      ctx.arc(dot.x, dot.y, dot.currentRadius, 0, Math.PI * 2)
+      ctx.fill()
+    })
+
+    animationFrameId.current = requestAnimationFrame(runAnimationFrame)
+  }, [])
+
+  useEffect(() => {
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
+    document.documentElement.addEventListener('mouseleave', handleMouseLeave)
+
+    animationFrameId.current = requestAnimationFrame(animateDots)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('mousemove', handleMouseMove)
+      document.documentElement.removeEventListener('mouseleave', handleMouseLeave)
+      if (animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current)
+      }
+    }
+  }, [animateDots, handleMouseLeave, handleMouseMove, handleResize])
+
+  return (
+    <>
+      <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 z-0 opacity-75" aria-hidden="true" />
+      <div
+        className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,transparent_38%,#050507_96%),linear-gradient(to_bottom,transparent_0%,#050507_92%)]"
+        aria-hidden="true"
+      />
+    </>
+  )
+}
 
 function MenuIcon({ className = '' }: { className?: string }) {
   return (
@@ -73,6 +272,40 @@ function RotatingTitleWord() {
   )
 }
 
+function SlidingButtonTextVertical({ defaultText, hoverText }: { defaultText: string; hoverText: string }) {
+  return (
+    <span className="relative inline-grid h-[1.4em] overflow-hidden">
+      <span className="transition-transform duration-300 ease-out group-hover/button:-translate-y-full">
+        {defaultText}
+      </span>
+      <span className="absolute inset-x-0 top-full transition-transform duration-300 ease-out group-hover/button:-translate-y-full">
+        {hoverText}
+      </span>
+    </span>
+  )
+}
+
+function SlidingButtonTextHorizontal({ defaultText, hoverText }: { defaultText: string; hoverText: string }) {
+  return (
+    <span className="relative inline-grid h-[1.4em] min-w-full overflow-hidden">
+      <span className="flex w-full justify-center whitespace-nowrap transition-transform duration-300 ease-out group-hover/button:-translate-x-full">
+        {defaultText}
+      </span>
+      <span className="absolute inset-0 flex translate-x-full justify-center whitespace-nowrap transition-transform duration-300 ease-out group-hover/button:translate-x-0">
+        {hoverText}
+      </span>
+    </span>
+  )
+}
+
+const slidingButtonTextVariants = {
+  horizontal: SlidingButtonTextHorizontal,
+  vertical: SlidingButtonTextVertical,
+}
+
+const SlidingButtonText = slidingButtonTextVariants.horizontal
+// const SlidingButtonText = slidingButtonTextVariants.vertical
+
 export default function Hero() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -120,6 +353,8 @@ export default function Hero() {
         alt=""
         aria-hidden="true"
       />
+
+      <DottedHeroBackground />
 
       <header className="fixed inset-x-0 top-0 z-30 px-3 pt-2">
         <nav
@@ -235,17 +470,17 @@ export default function Hero() {
             <div className="animate-hero-rise mt-12 flex flex-col items-center justify-center gap-3 [animation-delay:260ms] sm:flex-row">
               <div className="rounded-[1.05rem] border border-white/10 bg-white/[0.08] p-1">
                 <a
-                  className="inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-6 text-base font-semibold text-zinc-950 shadow-xl shadow-black/25 transition hover:-translate-y-0.5 hover:bg-zinc-100"
+                  className="group/button inline-flex min-h-12 min-w-40 items-center justify-center rounded-xl bg-white px-6 text-base font-semibold text-zinc-950 shadow-xl shadow-black/25 transition hover:-translate-y-0.5 hover:bg-zinc-100"
                   href="#start"
                 >
-                  Start Building
+                  <SlidingButtonText defaultText="Start Building" hoverText="For Institution" />
                 </a>
               </div>
               <a
-                className="inline-flex min-h-12 items-center justify-center rounded-xl px-6 text-base font-semibold text-white/[0.78] transition hover:bg-white/[0.08] hover:text-white"
+                className="group/button inline-flex min-h-12 min-w-40 items-center justify-center rounded-xl px-6 text-base font-semibold text-white/[0.78] transition hover:bg-white/[0.08] hover:text-white"
                 href="https://aiforkids.in" target='_blank'
               >
-                Start Learning
+                <SlidingButtonText defaultText="Start Learning" hoverText="For Students" />
               </a>
             </div>
           </div>
