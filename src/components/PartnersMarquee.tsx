@@ -80,6 +80,8 @@ export default function PartnersMarquee() {
                     className={`${logo.height} w-auto max-w-32 object-contain opacity-45 invert grayscale transition duration-300 group-hover/logo:opacity-75`}
                     src={logo.src}
                     alt={`${logo.name} logo`}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               ))}

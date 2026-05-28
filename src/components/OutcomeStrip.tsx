@@ -1,5 +1,3 @@
-import { outcomeStats } from '../data/home'
-
 export default function OutcomeStrip() {
   return (
     // <section className="relative mx-auto w-[min(100%-1.5rem,72rem)] py-12 pb-24 md:py-16 md:pb-28">

@@ -1,25 +1,33 @@
-import ChoosePathSection from '../components/ChoosePathSection'
-import CTASection from '../components/CTASection'
+import { lazy, Suspense } from 'react'
 import Hero from '../components/Hero'
-import InstitutionPlatformSection from '../components/InstitutionPlatformSection'
-import LearningExperienceGrid from '../components/LearningExperienceGrid'
-import OutcomeStrip from '../components/OutcomeStrip'
-import PartnersMarquee from '../components/PartnersMarquee'
-import ProgramsSection from '../components/ProgramsSection'
-import ValueSection from '../components/ValueSection'
+
+const ChoosePathSection = lazy(() => import('../components/ChoosePathSection'))
+const CTASection = lazy(() => import('../components/CTASection'))
+const InstitutionPlatformSection = lazy(() => import('../components/InstitutionPlatformSection'))
+const LearningExperienceGrid = lazy(() => import('../components/LearningExperienceGrid'))
+const OutcomeStrip = lazy(() => import('../components/OutcomeStrip'))
+const PartnersMarquee = lazy(() => import('../components/PartnersMarquee'))
+const ProgramsSection = lazy(() => import('../components/ProgramsSection'))
+const ValueSection = lazy(() => import('../components/ValueSection'))
+
+function HomeSectionFallback() {
+  return <div className="h-20" />
+}
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <PartnersMarquee />
-      <ChoosePathSection />
-      <LearningExperienceGrid />
-      <InstitutionPlatformSection />
-      <ProgramsSection />
-      <CTASection />
-      <ValueSection />
-      <OutcomeStrip />
+      <Suspense fallback={<HomeSectionFallback />}>
+        <PartnersMarquee />
+        <ChoosePathSection />
+        <LearningExperienceGrid />
+        <InstitutionPlatformSection />
+        <ProgramsSection />
+        <CTASection />
+        <ValueSection />
+        <OutcomeStrip />
+      </Suspense>
     </>
   )
 }

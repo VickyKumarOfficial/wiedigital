@@ -1,5 +1,3 @@
-import { valuePoints } from '../data/home'
-
 export default function ValueSection() {
   return (
     // <section id="solution" className="relative mx-auto w-[min(100%-1.5rem,64rem)] py-12 md:py-20">
