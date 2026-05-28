@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 type MockScreen = {
   id: string
   title: string
@@ -92,20 +94,18 @@ export default function CTASection() {
           </h2>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
+            <Link
               className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-blue-600 px-6 text-base font-semibold text-white shadow-lg shadow-blue-600/25 ring-2 ring-blue-300/25 transition hover:-translate-y-0.5 hover:bg-blue-500"
-              href="https://aiforkids.in"
-              rel="noreferrer"
-              target="_blank"
+              to="/students"
             >
               Start Learning
-            </a>
-            <a
+            </Link>
+            <Link
               className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-white px-6 text-base font-semibold text-zinc-950 shadow-lg shadow-black/25 transition hover:-translate-y-0.5 hover:bg-zinc-100"
-              href="#institutions"
+              to="/institutions"
             >
-              Explore Platform
-            </a>
+              Explore Institution Platform
+            </Link>
           </div>
         </div>
       </div>

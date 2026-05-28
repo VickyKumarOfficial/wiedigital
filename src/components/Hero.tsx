@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { heroImages, navItems } from '../data/home'
 import ContainerScrollAnimation from './ContainerScrollAnimation'
 
@@ -372,39 +373,39 @@ export default function Hero() {
                 : 'min-h-16 rounded-[1.35rem] border-transparent bg-transparent px-4',
             ].join(' ')}
           >
-            <a href="/" aria-label="wielearn home">
+            <Link to="/" aria-label="wielearn home">
               <Logo />
-            </a>
+            </Link>
 
             <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 text-sm font-medium text-white/70 lg:flex">
               {navItems.map((item) => (
                 <li key={item.name}>
-                  <a className="transition hover:text-white" href={item.href}>
+                  <Link className="transition hover:text-white" to={item.href}>
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
 
             <div className="hidden items-center gap-2 lg:flex">
-              <a
+              <Link
                 className={['rounded-xl px-4 py-2 text-sm font-semibold text-white/75 transition hover:bg-white/[0.08] hover:text-white', isScrolled ? 'lg:hidden' : ''].join(' ')}
-                href="#login"
+                to="/contact"
               >
                 Login
-              </a>
-              <a
+              </Link>
+              <Link
                 className={['rounded-xl bg-white px-4 py-2 text-sm font-semibold text-zinc-950 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-zinc-100', isScrolled ? 'lg:hidden' : ''].join(' ')}
-                href="#signup"
+                to="/contact"
               >
                 Sign Up
-              </a>
-              <a
+              </Link>
+              <Link
                 className={['rounded-xl bg-white px-4 py-2 text-sm font-semibold text-zinc-950 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-zinc-100', isScrolled ? 'lg:inline-flex' : 'hidden'].join(' ')}
-                href="#start"
+                to="/contact"
               >
                 Get Started
-              </a>
+              </Link>
             </div>
 
             <button
@@ -421,22 +422,22 @@ export default function Hero() {
           {isMenuOpen && (
             <div className="mt-2 grid gap-4 rounded-3xl border border-white/[0.12] bg-black/70 p-5 shadow-2xl shadow-black/[0.35] backdrop-blur-xl lg:hidden">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   className="font-medium text-white/75 transition hover:text-white"
-                  href={item.href}
+                  to={item.href}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <div className="grid grid-cols-2 gap-3 pt-2">
-                <a className="rounded-xl border border-white/[0.12] px-4 py-2 text-center font-semibold text-white" href="#login">
+                <Link className="rounded-xl border border-white/[0.12] px-4 py-2 text-center font-semibold text-white" to="/contact">
                   Login
-                </a>
-                <a className="rounded-xl bg-white px-4 py-2 text-center font-semibold text-zinc-950" href="#signup">
+                </Link>
+                <Link className="rounded-xl bg-white px-4 py-2 text-center font-semibold text-zinc-950" to="/contact">
                   Sign Up
-                </a>
+                </Link>
               </div>
             </div>
           )}
@@ -469,19 +470,19 @@ export default function Hero() {
 
             <div className="animate-hero-rise mt-12 flex flex-col items-center justify-center gap-3 [animation-delay:260ms] sm:flex-row">
               <div className="rounded-[1.05rem] border border-white/10 bg-white/[0.08] p-1">
-                <a
-                  className="group/button inline-flex min-h-12 min-w-40 items-center justify-center rounded-xl bg-white px-6 text-base font-semibold text-zinc-950 shadow-xl shadow-black/25 transition hover:-translate-y-0.5 hover:bg-zinc-100"
-                  href="#start"
+                <Link
+                  className="group/button inline-flex min-h-12 min-w-45 items-center justify-center rounded-xl bg-white px-6 text-base font-semibold text-zinc-950 shadow-xl shadow-black/25 transition hover:-translate-y-0.5 hover:bg-zinc-100"
+                  to="/institutions"
                 >
-                  <SlidingButtonText defaultText="Start Building" hoverText="For Institution" />
-                </a>
+                  <SlidingButtonText defaultText="Start Building" hoverText="For Institutions" />
+                </Link>
               </div>
-              <a
+              <Link
                 className="group/button inline-flex min-h-12 min-w-40 items-center justify-center rounded-xl px-6 text-base font-semibold text-white/[0.78] transition hover:bg-white/[0.08] hover:text-white"
-                href="https://aiforkids.in" target='_blank'
+                to="/students"
               >
                 <SlidingButtonText defaultText="Start Learning" hoverText="For Students" />
-              </a>
+              </Link>
             </div>
           </div>
 

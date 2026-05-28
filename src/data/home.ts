@@ -14,14 +14,91 @@ export type OutcomeStat = {
   value: string
 }
 
+export type PathCard = {
+  title: string
+  eyebrow: string
+  description: string
+  href: string
+  cta: string
+  features: string[]
+}
+
+export type ExperienceStep = {
+  title: string
+  description: string
+  metric: string
+}
+
+export type PlatformFeature = {
+  title: string
+  description: string
+}
+
 export const navItems: NavItem[] = [
-  { name: 'Features', href: '#features' },
-  { name: 'Solution', href: '#solution' },
-  { name: 'Pricing', href: '#pricing' },
-  { name: 'About', href: '#about' },
+  { name: 'Students', href: '/students' },
+  { name: 'Institutions', href: '/institutions' },
+  { name: 'Platform', href: '/platform' },
+  { name: 'Programs', href: '/programs' },
+  { name: 'About', href: '/about' },
 ]
 
 export const valuePoints = ['Hands-on curriculum', 'AI-first learning paths', 'LMS/KMS-powered delivery']
+
+export const pathCards: PathCard[] = [
+  {
+    title: 'For Students',
+    eyebrow: 'Classes 6-12',
+    description: 'Build strong digital foundations with AI, CS, IT and IP through guided projects and practical labs.',
+    href: '/students',
+    cta: 'Start Learning',
+    features: ['AI-first learning paths', 'Project-based classes', 'Future-ready digital skills'],
+  },
+  {
+    title: 'For Institutions',
+    eyebrow: 'LMS/KMS platform',
+    description: 'Deliver curriculum, manage knowledge, and track learner progress from one classroom-ready platform.',
+    href: '/institutions',
+    cta: 'Explore Platform',
+    features: ['Curriculum delivery', 'Learner progress', 'Knowledge management'],
+  },
+]
+
+export const learningExperience: ExperienceStep[] = [
+  {
+    title: 'Learn concepts',
+    description: 'Clear modules turn AI, CS, IT and IP topics into classroom-friendly learning paths.',
+    metric: '01',
+  },
+  {
+    title: 'Build projects',
+    description: 'Students apply every concept through practical builds, mini labs and guided challenges.',
+    metric: '02',
+  },
+  {
+    title: 'Track progress',
+    description: 'Progress visibility helps students, teachers and institutions see growth over time.',
+    metric: '03',
+  },
+]
+
+export const platformFeatures: PlatformFeature[] = [
+  {
+    title: 'Curriculum modules',
+    description: 'Organize class-wise content, lessons and assignments into repeatable learning flows.',
+  },
+  {
+    title: 'Student analytics',
+    description: 'Track participation, completion and growth signals without overwhelming teachers.',
+  },
+  {
+    title: 'Resource library',
+    description: 'Manage reusable content, notes and institutional knowledge in one searchable space.',
+  },
+  {
+    title: 'Classroom management',
+    description: 'Support batches, learner groups and delivery workflows for schools and centers.',
+  },
+]
 
 export const outcomeStats: OutcomeStat[] = [
   { value: 'Classes 6-12', label: 'student programs' },

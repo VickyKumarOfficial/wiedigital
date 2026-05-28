@@ -1,12 +1,15 @@
+import { Link } from 'react-router-dom'
+
 const footerColumns = [
   {
     title: 'Pages',
     links: [
-      { label: 'Programs', href: '#features' },
-      { label: 'Institutions', href: '#institutions' },
-      { label: 'Platform', href: '#solution' },
-      { label: 'Partners', href: '#partners' },
-      { label: 'Contact', href: 'mailto:hello@wielearn.com' },
+      { label: 'Students', href: '/students' },
+      { label: 'Institutions', href: '/institutions' },
+      { label: 'Platform', href: '/platform' },
+      { label: 'Programs', href: '/programs' },
+      { label: 'About', href: '/about' },
+      { label: 'Contact', href: '/contact' },
     ],
   },
   {
@@ -20,9 +23,9 @@ const footerColumns = [
   {
     title: 'Register',
     links: [
-      { label: 'Sign Up', href: '#signup' },
-      { label: 'Login', href: '#login' },
-      { label: 'Start Learning', href: 'https://aiforkids.in' },
+      { label: 'Sign Up', href: '/contact' },
+      { label: 'Login', href: '/contact' },
+      { label: 'Start Learning', href: '/students' },
     ],
   },
 ]
@@ -111,9 +114,9 @@ export default function Footer() {
                 <ul className="mt-5 grid gap-4">
                   {column.links.map((link) => (
                     <li key={link.label}>
-                      <a className="text-sm text-white transition hover:text-violet-100" href={link.href}>
+                      <Link className="text-sm text-white transition hover:text-violet-100" to={link.href}>
                         {link.label}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
