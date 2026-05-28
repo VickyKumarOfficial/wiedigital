@@ -125,14 +125,14 @@ export default function InstitutionPlatformSection() {
       <div className="grid gap-4 lg:grid-cols-[1.25fr_0.75fr]">
         <div className="relative overflow-hidden rounded-[2rem] border border-white/[0.08] bg-[#0b0b0d] p-5 md:p-6">
           <PlatformGlow opacity={0.62} proximity={210} spread={46} />
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="flex flex-col gap-4">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-violet-200/65">Institution platform</p>
-              <h2 className="mt-3 max-w-xl text-balance text-4xl font-bold tracking-normal text-white md:text-5xl">
+              <h2 className="mt-3 max-w-full text-balance text-4xl font-bold tracking-normal text-white md:text-5xl">
                 LMS and KMS tools for curriculum delivery.
               </h2>
             </div>
-            <p className="max-w-sm text-sm leading-6 text-zinc-400">
+            <p className="max-w-2xl text-sm leading-6 text-zinc-400">
               A dashboard-style workspace for content, classrooms, progress and institutional knowledge.
             </p>
           </div>
