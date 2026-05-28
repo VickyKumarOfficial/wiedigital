@@ -49,24 +49,25 @@ const mockScreens: MockScreen[] = [
 function MockScreenCard({ screen }: { screen: MockScreen }) {
   return (
     <div
-      className={`absolute ${screen.className} overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0b0b0c] shadow-2xl shadow-black/40`}
+      className={`absolute ${screen.className} overflow-hidden rounded-2xl border border-white/[0.08] bg-[#101011] shadow-2xl shadow-black/40`}
       aria-hidden="true"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(167,139,250,0.12),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.015))]" />
+      <div className="absolute inset-0 bg-[#101011]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(167,139,250,0.1),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012))]" />
       <div className="relative flex h-full flex-col p-4">
         <p className="text-[11px] font-semibold text-white/60">{screen.title}</p>
         <p className="mt-1 text-[9px] leading-3 text-white/28">{screen.caption}</p>
 
         <div className="mt-5 grid gap-2">
-          <div className="h-9 rounded-lg border border-white/[0.07] bg-white/[0.035]" />
-          <div className="h-2 w-2/3 rounded-full bg-white/[0.08]" />
-          <div className="h-2 w-1/2 rounded-full bg-white/[0.06]" />
+          <div className="h-9 rounded-lg border border-white/[0.07] bg-[#18181a]" />
+          <div className="h-2 w-2/3 rounded-full bg-[#202024]" />
+          <div className="h-2 w-1/2 rounded-full bg-[#1a1a1d]" />
         </div>
 
         <div className="mt-auto grid grid-cols-3 gap-2">
-          <div className="h-12 rounded-xl border border-white/[0.06] bg-white/[0.025]" />
-          <div className="h-12 rounded-xl border border-white/[0.06] bg-white/[0.025]" />
-          <div className="h-12 rounded-xl border border-white/[0.06] bg-white/[0.025]" />
+          <div className="h-12 rounded-xl border border-white/[0.06] bg-[#151517]" />
+          <div className="h-12 rounded-xl border border-white/[0.06] bg-[#151517]" />
+          <div className="h-12 rounded-xl border border-white/[0.06] bg-[#151517]" />
         </div>
       </div>
     </div>
@@ -83,10 +84,12 @@ export default function CTASection() {
           ))}
         </div>
 
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-[22%] bg-gradient-to-r from-[#101011] via-[#101011]/82 to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-[22%] bg-gradient-to-l from-[#101011] via-[#101011]/82 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-[5] w-[13%] bg-gradient-to-r from-[#101011] via-[#101011]/88 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-[5] w-[13%] bg-gradient-to-l from-[#101011] via-[#101011]/88 to-transparent" />
 
-        <div className="absolute inset-y-0 left-1/2 z-10 w-[calc(92%+2rem)] -translate-x-1/2 rounded-[2rem] bg-[#151515] shadow-[0_0_95px_rgba(0,0,0,0.78)] sm:w-[calc(72%+2rem)] md:w-[calc(52%+2rem)] lg:w-[calc(44%+2rem)]" />
+        <div className="absolute inset-y-0 left-1/2 z-10 w-[calc(92%+2rem)] -translate-x-1/2 overflow-hidden rounded-[2rem] bg-[#151515] shadow-[0_0_95px_rgba(0,0,0,0.78)] sm:w-[calc(72%+2rem)] md:w-[calc(52%+2rem)] lg:w-[calc(44%+2rem)]">
+          <div className="absolute inset-0 bg-[#151515]" />
+        </div>
 
         <div className="relative z-20 flex min-h-[30rem] flex-col items-center justify-center px-6 text-center">
           <h2 className="max-w-xl text-balance text-4xl font-bold leading-tight tracking-normal text-white md:text-5xl">

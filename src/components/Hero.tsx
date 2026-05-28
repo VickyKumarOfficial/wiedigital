@@ -489,8 +489,8 @@ export default function Hero() {
           <ContainerScrollAnimation>
             <div className="animate-hero-rise relative -mr-56 px-2 [animation-delay:340ms] sm:mr-0">
               <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-2/3 bg-gradient-to-b from-transparent via-[#050507]/80 to-[#050507]" />
-              <div className="pointer-events-none absolute inset-x-6 bottom-0 z-10 h-40 rounded-full bg-black/70 blur-3xl" />
-              <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/[0.12] bg-[#09090b] p-4 shadow-[0_35px_110px_rgba(0,0,0,0.72)] ring-1 ring-white/[0.08]">
+              <div className="pointer-events-none absolute inset-x-6 bottom-0 z-10 h-25 rounded-full bg-black/70 blur-3xl" />
+              <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-white/[0.2] bg-[#09090b] p-4 shadow-[0_35px_110px_rgba(0,0,0,0.72)] ring-1 ring-white/[0.08]">
                 <img
                   className="aspect-[15/8] w-full rounded-2xl border border-white/[0.08] object-cover object-top"
                   src={heroImages.dashboard}

@@ -53,7 +53,7 @@ export default function PartnersMarquee() {
   }
 
   return (
-    <section className="relative mx-auto w-[80%] min-w-0 py-16 text-center md:py-24">
+    <section className="relative mx-auto w-[80%] min-w-0 py-16 text-center md:py-10">
       <p className="text-sm font-medium tracking-wide text-zinc-400">
         Collaborated with forward-thinking teams
       </p>

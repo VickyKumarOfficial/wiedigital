@@ -1,4 +1,5 @@
 import { learningExperience } from '../data/home'
+import GlowingEffect from './GlowingEffect'
 
 export default function LearningExperienceGrid() {
   return (
@@ -13,10 +14,12 @@ export default function LearningExperienceGrid() {
       <div className="mt-10 grid gap-4 md:grid-cols-3">
         {learningExperience.map((step) => (
           <article
-            className="group overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-[#0b0b0d] p-5 transition duration-300 hover:-translate-y-1 hover:border-white/[0.16]"
+            className="relative overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-[#0b0b0d] p-5"
             key={step.title}
           >
+            <GlowingEffect borderWidth={1.25} opacity={0.42} proximity={120} spread={32} />
             <div className="relative h-40 overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.025]">
+              <GlowingEffect borderWidth={1.25} opacity={0.36} proximity={86} spread={28} />
               <div className="absolute inset-x-4 top-4 flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-teal-200/70" />
                 <span className="h-2 w-2 rounded-full bg-violet-200/60" />
@@ -31,7 +34,7 @@ export default function LearningExperienceGrid() {
                 <div className="h-14 rounded-xl bg-violet-200/[0.08] ring-1 ring-violet-200/[0.14]" />
                 <div className="h-14 rounded-xl bg-white/[0.04] ring-1 ring-white/[0.08]" />
               </div>
-              <span className="absolute right-4 top-4 text-5xl font-black text-white/[0.04] transition group-hover:text-white/[0.08]">
+              <span className="absolute right-4 top-4 text-5xl font-black text-white/[0.04]">
                 {step.metric}
               </span>
             </div>
