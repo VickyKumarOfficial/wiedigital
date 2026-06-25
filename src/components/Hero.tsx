@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { heroImages, navItems } from '../data/home'
 import ContainerScrollAnimation from './ContainerScrollAnimation'
 
-const rotatingTitleWords = ['products', 'design', 'experiences', 'talent']
+const rotatingTitleWords = ['websites', 'apps', 'SEO', 'social media']
 
 interface Dot {
   x: number
@@ -226,7 +226,7 @@ function Logo() {
       <svg className="h-7 w-7 text-teal-300" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
         <path d="M8 5h4v22H8zM20 5h4v22h-4zM5 8h22v4H5zM5 20h22v4H5z" />
       </svg>
-      <span>wielearn</span>
+      <span>WeDigitize</span>
     </span>
   )
 }
@@ -373,7 +373,7 @@ export default function Hero() {
                 : 'min-h-16 rounded-[1.35rem] border-transparent bg-transparent px-4',
             ].join(' ')}
           >
-            <Link to="/" aria-label="wielearn home">
+            <Link to="/" aria-label="WeDigitize home">
               <Logo />
             </Link>
 
@@ -459,13 +459,12 @@ export default function Hero() {
             </a> */}
 
             <h1 className="animate-hero-rise mx-auto mt-8 max-w-5xl text-balance text-6xl leading-[0.96] font-bold tracking-normal [animation-delay:100ms] md:text-7xl lg:mt-14 xl:text-[5.25rem]">
-              <span className="text-violet-100">Shaping next-gen digital</span>
+              <span className="text-violet-100">Building digital presence with</span>
               <br /> <RotatingTitleWord />
             </h1>
 
             <p className="animate-hero-rise mx-auto mt-7 max-w-2xl text-balance text-lg leading-8 text-zinc-400 [animation-delay:180ms]">
-              Where top-tier agency execution meets hands-on tech education. We build for clients
-              and train the future workforce.
+              We create modern websites, apps, SEO strategies and social media handles that help your business stand out, connect with customers and grow online.
             </p>
 
             <div className="animate-hero-rise mt-12 flex flex-col items-center justify-center gap-3 [animation-delay:260ms] sm:flex-row">
@@ -474,14 +473,14 @@ export default function Hero() {
                   className="group/button inline-flex min-h-12 min-w-45 items-center justify-center rounded-xl bg-white px-6 text-base font-semibold text-zinc-950 shadow-xl shadow-black/25 transition hover:-translate-y-0.5 hover:bg-zinc-100"
                   to="/institutions"
                 >
-                  <SlidingButtonText defaultText="Start Building" hoverText="For Institutions" />
+                  <SlidingButtonText defaultText="Build Presence" hoverText="Free Consultation" />
                 </Link>
               </div>
               <Link
                 className="group/button inline-flex min-h-12 min-w-40 items-center justify-center rounded-xl px-6 text-base font-semibold text-white/[0.78] transition hover:bg-white/[0.08] hover:text-white"
                 to="/students"
               >
-                <SlidingButtonText defaultText="Start Learning" hoverText="For Students" />
+                <SlidingButtonText defaultText="Explore Services" hoverText="Digital Solutions" />
               </Link>
             </div>
           </div>
@@ -494,7 +493,7 @@ export default function Hero() {
                 <img
                   className="aspect-[15/8] w-full rounded-2xl border border-white/[0.08] object-cover object-top"
                   src={heroImages.dashboard}
-                  alt="Customer engagement dashboard preview"
+                  alt="Digital agency dashboard preview"
                   width="2700"
                   height="1440"
                 />
