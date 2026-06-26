@@ -6,13 +6,13 @@ export default function ProgramsSection() {
     <section id="programs" className="relative mx-auto w-[min(100%-1.5rem,76rem)] py-14 md:py-20">
       <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-200/65">Programs</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-200/65">Services</p>
           <h2 className="mt-3 max-w-2xl text-balance text-4xl font-bold tracking-normal text-white md:text-5xl">
-            Practical tracks for school-age digital fluency.
+            Everything your business needs to grow online.
           </h2>
         </div>
         <Link className="w-fit rounded-full border border-white/[0.1] px-5 py-2 text-sm font-bold text-white transition hover:bg-white/[0.08]" to="/programs">
-          View all programs
+          View all services
         </Link>
       </div>
 
@@ -26,7 +26,7 @@ export default function ProgramsSection() {
             <h3 className="mt-5 text-xl font-bold text-white">{program.title}</h3>
             <p className="mt-3 text-sm leading-6 text-zinc-400">{program.outcome}</p>
             <Link className="mt-auto pt-6 text-sm font-bold text-violet-100 transition group-hover:text-white" to="/programs">
-              Explore track
+              Explore service
             </Link>
           </article>
         ))}

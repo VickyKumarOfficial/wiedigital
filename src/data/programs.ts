@@ -7,27 +7,27 @@ export type Program = {
 
 export const programs: Program[] = [
   {
-    title: 'Tracks for Classes 6-12',
-    level: 'Beginner to advanced school tracks',
-    outcome: 'Build AI literacy through prompts, models, automation and responsible use.',
-    description: 'A practical AI pathway for students to understand modern tools and create useful projects.',
+    title: 'Website Design',
+    level: 'Responsive business websites',
+    outcome: 'Create a modern, mobile-friendly website that makes your brand clear and easy to trust.',
+    description: 'Professional website design for startups and small businesses that need a strong digital first impression.',
   },
   {
-    title: 'Interactive Playgrounds',
-    level: 'Hands-on practice spaces',
-    outcome: 'Experiment with prompts, code, logic and classroom challenges in guided live environments.',
-    description: 'Interactive sandboxes where students can test ideas, break concepts apart and learn by doing.',
+    title: 'App Development',
+    level: 'Custom digital products',
+    outcome: 'Build practical web and app experiences that support your business operations and customer journey.',
+    description: 'Custom development for digital tools, apps and product ideas that need clean execution.',
   },
   {
-    title: 'Visualization Tools',
-    level: 'Concept mapping and data views',
-    outcome: 'Turn abstract topics, workflows and progress signals into clear visual learning experiences.',
-    description: 'Visual tools that help students understand systems, patterns, data and project flow with more clarity.',
+    title: 'SEO Strategy',
+    level: 'Search visibility and growth',
+    outcome: 'Improve how customers discover your business through better structure, keywords and content planning.',
+    description: 'SEO support for stronger search presence, clearer pages and long-term organic growth.',
   },
   {
-    title: 'Resource Managements',
-    level: 'Content and classroom assets',
-    outcome: 'Organize lessons, references, assignments and reusable learning materials in one structured layer.',
-    description: 'A practical resource layer for managing curriculum assets, classroom references and repeatable delivery.',
+    title: 'Social Media Handles',
+    level: 'Content and brand presence',
+    outcome: 'Keep your brand active and consistent across social channels with planned content and handle management.',
+    description: 'Social media support for businesses that need steady visibility, content direction and customer connection.',
   },
 ]

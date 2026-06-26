@@ -4,10 +4,10 @@ const footerColumns = [
   {
     title: 'Pages',
     links: [
-      { label: 'Students', href: '/students' },
-      { label: 'Institutions', href: '/institutions' },
-      { label: 'Platform', href: '/platform' },
-      { label: 'Programs', href: '/programs' },
+      { label: 'Websites & Apps', href: '/students' },
+      { label: 'Growth Services', href: '/institutions' },
+      { label: 'Workflow', href: '/platform' },
+      { label: 'Services', href: '/programs' },
       { label: 'About', href: '/about' },
       { label: 'Contact', href: '/contact' },
     ],
@@ -21,11 +21,11 @@ const footerColumns = [
     ],
   },
   {
-    title: 'Register',
+    title: 'Get Started',
     links: [
-      { label: 'Sign Up', href: '/contact' },
-      { label: 'Login', href: '/contact' },
-      { label: 'Start Learning', href: '/students' },
+      { label: 'Book Consultation', href: '/contact' },
+      { label: 'Request Quote', href: '/contact' },
+      { label: 'Explore Services', href: '/programs' },
     ],
   },
 ]
@@ -74,7 +74,7 @@ function FooterLogo() {
           <path d="M8 5h4v22H8zM20 5h4v22h-4zM5 8h22v4H5zM5 20h22v4H5z" />
         </svg>
       </span>
-      <span>Wielearn</span>
+      <span>WeDigitize</span>
     </span>
   )
 }
@@ -85,7 +85,7 @@ export default function Footer() {
       <div className="relative z-10 mx-auto grid w-[min(100%-2rem,76rem)] gap-12 pt-20 pb-56 md:grid-cols-[1.05fr_1.6fr] md:pt-24 md:pb-64">
         <div>
           <FooterLogo />
-          <p className="mt-6 text-sm text-zinc-500">© copyright Wielearn {new Date().getFullYear()}. All rights reserved.</p>
+          <p className="mt-6 text-sm text-zinc-500">© copyright WeDigitize {new Date().getFullYear()}. All rights reserved.</p>
 
           <div className="mt-8">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">Social Media Handles</p>
@@ -128,10 +128,10 @@ export default function Footer() {
       </div>
 
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-[-30px] select-none text-center text-[18vw] font-black leading-none tracking-[-0.05em] text-white/[0.045]"
+        className="pointer-events-none absolute inset-x-0 bottom-[22px] select-none text-center text-[18vw] font-black leading-none tracking-[-0.05em] text-white/[0.045]"
         aria-hidden="true"
       >
-        Wielearn.
+        WeDigitize.
       </div>
     </footer>
   )

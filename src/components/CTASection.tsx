@@ -10,38 +10,38 @@ type MockScreen = {
 const mockScreens: MockScreen[] = [
   {
     id: 'features',
-    title: 'AI learning paths',
-    caption: 'Classroom ready modules',
+    title: 'Website strategy',
+    caption: 'Clear page roadmap',
     className: 'left-[2%] top-0 h-64 w-52 md:h-72 md:w-60',
   },
   {
     id: 'progress',
-    title: 'Student progress',
-    caption: 'Track growth weekly',
+    title: 'SEO progress',
+    caption: 'Track growth signals',
     className: 'left-[20%] top-8 h-52 w-48 md:h-60 md:w-56',
   },
   {
     id: 'projects',
-    title: 'Build faster with AI',
-    caption: 'Hands-on project labs',
+    title: 'App development',
+    caption: 'Custom digital tools',
     className: 'left-[2%] bottom-0 h-48 w-64 md:h-60 md:w-80',
   },
   {
     id: 'knowledge',
-    title: 'Knowledge base',
-    caption: 'Organized LMS content',
+    title: 'Content library',
+    caption: 'Organized brand assets',
     className: 'right-[2%] top-0 h-64 w-52 md:h-72 md:w-60',
   },
   {
     id: 'skills',
-    title: 'Skill insights',
-    caption: 'AI, CS, IT and IP',
+    title: 'Social media',
+    caption: 'Posts and handle support',
     className: 'right-[20%] top-10 h-52 w-48 md:h-60 md:w-56',
   },
   {
     id: 'workspace',
-    title: 'Institution workspace',
-    caption: 'KMS/LMS delivery stack',
+    title: 'Growth workspace',
+    caption: 'Digital delivery stack',
     className: 'right-[2%] bottom-0 h-48 w-64 md:h-60 md:w-80',
   },
 ]
@@ -93,7 +93,7 @@ export default function CTASection() {
 
         <div className="relative z-20 flex min-h-[30rem] flex-col items-center justify-center px-6 text-center">
           <h2 className="max-w-xl text-balance text-4xl font-bold leading-tight tracking-normal text-white md:text-5xl">
-            Build future-ready learning for every classroom.
+            Ready to build your digital presence?
           </h2>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -101,13 +101,13 @@ export default function CTASection() {
               className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-blue-600 px-6 text-base font-semibold text-white shadow-lg shadow-blue-600/25 ring-2 ring-blue-300/25 transition hover:-translate-y-0.5 hover:bg-blue-500"
               to="/students"
             >
-              Start Learning
+              Book Free Consultation
             </Link>
             <Link
               className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-white px-6 text-base font-semibold text-zinc-950 shadow-lg shadow-black/25 transition hover:-translate-y-0.5 hover:bg-zinc-100"
               to="/institutions"
             >
-              Explore Institution Platform
+              Explore Services
             </Link>
           </div>
         </div>
