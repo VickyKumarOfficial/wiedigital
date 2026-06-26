@@ -35,10 +35,10 @@ export type PlatformFeature = {
 }
 
 export const navItems: NavItem[] = [
-  { name: 'Students', href: '/students' },
-  { name: 'Institutions', href: '/institutions' },
-  { name: 'Platform', href: '/platform' },
-  { name: 'Programs', href: '/programs' },
+  { name: 'Websites', href: '/students' },
+  { name: 'Growth', href: '/institutions' },
+  { name: 'Workflow', href: '/platform' },
+  { name: 'Services', href: '/programs' },
   { name: 'About', href: '/about' },
 ]
 

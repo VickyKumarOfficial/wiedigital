@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import logoDark from '../assets/logo_Dark.png'
 import { heroImages, navItems } from '../data/home'
 import ContainerScrollAnimation from './ContainerScrollAnimation'
 
@@ -222,12 +223,7 @@ function XIcon({ className = '' }: { className?: string }) {
 
 function Logo() {
   return (
-    <span className="inline-flex items-center gap-2.5 font-bold tracking-normal text-white">
-      <svg className="h-7 w-7 text-teal-300" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
-        <path d="M8 5h4v22H8zM20 5h4v22h-4zM5 8h22v4H5zM5 20h22v4H5z" />
-      </svg>
-      <span>WeDigitize</span>
-    </span>
+    <img className="h-8 w-auto" src={logoDark} alt="WeDigitize" />
   )
 }
 
@@ -392,13 +388,13 @@ export default function Hero() {
                 className={['rounded-xl px-4 py-2 text-sm font-semibold text-white/75 transition hover:bg-white/[0.08] hover:text-white', isScrolled ? 'lg:hidden' : ''].join(' ')}
                 to="/contact"
               >
-                Login
+                Book Call
               </Link>
               <Link
                 className={['rounded-xl bg-white px-4 py-2 text-sm font-semibold text-zinc-950 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-zinc-100', isScrolled ? 'lg:hidden' : ''].join(' ')}
                 to="/contact"
               >
-                Sign Up
+                Request Quote
               </Link>
               <Link
                 className={['rounded-xl bg-white px-4 py-2 text-sm font-semibold text-zinc-950 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-zinc-100', isScrolled ? 'lg:inline-flex' : 'hidden'].join(' ')}
@@ -433,10 +429,10 @@ export default function Hero() {
               ))}
               <div className="grid grid-cols-2 gap-3 pt-2">
                 <Link className="rounded-xl border border-white/[0.12] px-4 py-2 text-center font-semibold text-white" to="/contact">
-                  Login
+                  Book Call
                 </Link>
                 <Link className="rounded-xl bg-white px-4 py-2 text-center font-semibold text-zinc-950" to="/contact">
-                  Sign Up
+                  Request Quote
                 </Link>
               </div>
             </div>

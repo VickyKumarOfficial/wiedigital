@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import logoDark from '../assets/logo_Dark.png'
 
 const footerColumns = [
   {
@@ -68,14 +69,7 @@ const socialLinks = [
 
 function FooterLogo() {
   return (
-    <span className="inline-flex items-center gap-3 font-bold tracking-normal text-white">
-      <span className="grid h-8 w-8 place-items-center rounded-lg bg-white text-[#050507]">
-        <svg className="h-5 w-5" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
-          <path d="M8 5h4v22H8zM20 5h4v22h-4zM5 8h22v4H5zM5 20h22v4H5z" />
-        </svg>
-      </span>
-      <span>WeDigitize</span>
-    </span>
+    <img className="h-10 w-auto" src={logoDark} alt="WeDigitize" />
   )
 }
 
