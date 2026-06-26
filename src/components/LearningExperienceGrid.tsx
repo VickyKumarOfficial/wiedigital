@@ -5,9 +5,9 @@ export default function LearningExperienceGrid() {
   return (
     <section className="relative mx-auto w-[min(100%-1.5rem,76rem)] py-14 md:py-20">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-200/65">Learning experience</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-200/65">Our process</p>
         <h2 className="mt-3 text-balance text-4xl font-bold tracking-normal text-white md:text-5xl">
-          Learn by moving from ideas to working projects.
+          From idea to launch with a clear digital plan.
         </h2>
       </div>
 

@@ -65,18 +65,18 @@ export const pathCards: PathCard[] = [
 
 export const learningExperience: ExperienceStep[] = [
   {
-    title: 'Learn concepts',
-    description: 'Clear modules turn AI, CS, IT and IP topics into classroom-friendly learning paths.',
+    title: 'Consult',
+    description: 'We understand your business, audience, goals and digital gaps before shaping the right plan.',
     metric: '01',
   },
   {
-    title: 'Build projects',
-    description: 'Students apply every concept through practical builds, mini labs and guided challenges.',
+    title: 'Design',
+    description: 'We craft clean, responsive experiences that make your brand clear, credible and easy to use.',
     metric: '02',
   },
   {
-    title: 'Track progress',
-    description: 'Progress visibility helps students, teachers and institutions see growth over time.',
+    title: 'Build & Launch',
+    description: 'We develop, test and launch your digital presence with SEO and growth foundations in place.',
     metric: '03',
   },
 ]
