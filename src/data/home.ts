@@ -46,20 +46,20 @@ export const valuePoints = ['Hands-on curriculum', 'AI-first learning paths', 'L
 
 export const pathCards: PathCard[] = [
   {
-    title: 'For Students',
-    eyebrow: 'Classes 6-12',
-    description: 'Build strong digital foundations with AI, CS, IT and IP through guided projects and practical labs.',
+    title: 'Websites & Apps',
+    eyebrow: 'Digital presence',
+    description: 'Launch fast, responsive websites and apps that present your business clearly and convert visitors into customers.',
     href: '/students',
-    cta: 'Start Learning',
-    features: ['AI-first learning paths', 'Project-based classes', 'Future-ready digital skills'],
+    cta: 'Start Building',
+    features: ['Responsive web design', 'Custom app development', 'Conversion-ready pages'],
   },
   {
-    title: 'For Institutions',
-    eyebrow: 'LMS/KMS platform',
-    description: 'Deliver curriculum, manage knowledge, and track learner progress from one classroom-ready platform.',
+    title: 'SEO & Social Media',
+    eyebrow: 'Online growth',
+    description: 'Improve discoverability, manage social handles, and build a consistent brand presence across digital channels.',
     href: '/institutions',
-    cta: 'Explore Platform',
-    features: ['Curriculum delivery', 'Learner progress', 'Knowledge management'],
+    cta: 'Grow Online',
+    features: ['SEO strategy', 'Social media handles', 'Digital brand support'],
   },
 ]
 

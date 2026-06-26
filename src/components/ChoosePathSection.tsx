@@ -14,13 +14,13 @@ export default function ChoosePathSection() {
     <section id="paths" className="relative mx-auto w-[min(100%-1.5rem,76rem)] py-14 md:py-20">
       <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-violet-200/65">Choose your path</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-violet-200/65">What we do</p>
           <h2 className="mt-3 max-w-2xl text-balance text-4xl font-bold tracking-normal text-white md:text-5xl">
-            One ecosystem for learners and institutions.
+            Digital solutions built for growing businesses.
           </h2>
         </div>
         <p className="max-w-md text-sm leading-6 text-zinc-400">
-          Wielearn connects hands-on student programs with the platform layer schools need to deliver them at scale.
+          From websites and apps to SEO and social media, WeDigitize helps brands build a stronger online presence.
         </p>
       </div>
 
