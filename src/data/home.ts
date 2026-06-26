@@ -83,20 +83,20 @@ export const learningExperience: ExperienceStep[] = [
 
 export const platformFeatures: PlatformFeature[] = [
   {
-    title: 'Curriculum modules',
-    description: 'Organize class-wise content, lessons and assignments into repeatable learning flows.',
+    title: 'Website planning',
+    description: 'Map pages, user journeys, content needs and launch priorities before development begins.',
   },
   {
-    title: 'Student analytics',
-    description: 'Track participation, completion and growth signals without overwhelming teachers.',
+    title: 'SEO tracking',
+    description: 'Improve search visibility with keyword planning, technical basics and growth-focused updates.',
   },
   {
-    title: 'Resource library',
-    description: 'Manage reusable content, notes and institutional knowledge in one searchable space.',
+    title: 'Content library',
+    description: 'Organize copy, visuals, offers and reusable brand assets for consistent digital communication.',
   },
   {
-    title: 'Classroom management',
-    description: 'Support batches, learner groups and delivery workflows for schools and centers.',
+    title: 'Social media management',
+    description: 'Plan posts, manage handles and keep your brand active across the channels your customers use.',
   },
 ]
 

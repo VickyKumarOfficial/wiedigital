@@ -7,31 +7,31 @@ function PlatformGlow({ proximity = 120, opacity = 0.58, spread = 38 }: { proxim
 }
 
 const curriculumTracks = [
-  'Introduction to AI foundations',
-  'Prompt design and safety',
-  'Data literacy projects',
-  'Capstone project studio',
+  'Website design roadmap',
+  'App development workflow',
+  'SEO content planning',
+  'Social media calendar',
 ]
 
 const learnerBatches = [
-  { name: 'Batch 1', progress: 78 },
-  { name: 'Batch 2', progress: 64 },
-  { name: 'Batch 3', progress: 86 },
-  { name: 'Batch 4', progress: 52 },
+  { name: 'Website', progress: 78 },
+  { name: 'SEO', progress: 64 },
+  { name: 'Social', progress: 86 },
+  { name: 'Content', progress: 52 },
 ]
 
 const learnerStatGroups = [
-  { title: 'Learning Progress', stats: learnerBatches.slice(0, 2) },
-  { title: 'Batch Exam Results', stats: learnerBatches.slice(2) },
+  { title: 'Project Progress', stats: learnerBatches.slice(0, 2) },
+  { title: 'Growth Channels', stats: learnerBatches.slice(2) },
 ]
 
 const learnerInsights = [
-  { value: '12', label: 'active learners' },
-  { value: '3', label: 'modules due' },
-  { value: '2', label: 'review alerts' },
+  { value: '12', label: 'active tasks' },
+  { value: '3', label: 'launch items' },
+  { value: '2', label: 'review notes' },
 ]
 
-const coreTrackTerms = ['Artificial Intelligence', 'Coding', 'Computer Science', 'GitHub', 'Programming', 'Boards Curriculum']
+const coreTrackTerms = ['Web Design', 'App Development', 'SEO Strategy', 'Social Media', 'CMS Setup', 'Digital Consulting']
 
 export default function InstitutionPlatformSection() {
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('list')
@@ -127,13 +127,13 @@ export default function InstitutionPlatformSection() {
           <PlatformGlow opacity={0.62} proximity={210} spread={46} />
           <div className="flex flex-col gap-4">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-violet-200/65">Institution platform</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-violet-200/65">Growth workflow</p>
               <h2 className="mt-3 max-w-full text-balance text-4xl font-bold tracking-normal text-white md:text-5xl">
-                LMS and KMS tools for curriculum delivery.
+                Everything your online presence needs in one clear plan.
               </h2>
             </div>
             <p className="max-w-2xl text-sm leading-6 text-zinc-400">
-              A dashboard-style workspace for content, classrooms, progress and institutional knowledge.
+              Plan websites, apps, SEO, social media and content updates through a focused digital roadmap.
             </p>
           </div>
 
@@ -155,14 +155,14 @@ export default function InstitutionPlatformSection() {
                 <span className="h-2.5 w-2.5 rounded-full bg-violet-200/60" />
                 <span className="h-2.5 w-2.5 rounded-full bg-white/35" />
               </div>
-              <span className="text-xs font-semibold text-zinc-500">Wielearn workspace</span>
+              <span className="text-xs font-semibold text-zinc-500">WeDigitize workspace</span>
             </div>
 
             <div className="grid min-h-80 gap-3 p-4 md:grid-cols-[0.8fr_1.2fr]">
               <div className="grid gap-3">
                 <div className="group/curriculum relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.035] p-4">
                   <PlatformGlow opacity={0.54} proximity={120} spread={34} />
-                  <p className="text-sm font-semibold text-white">Curriculum stack</p>
+                  <p className="text-sm font-semibold text-white">Service stack</p>
                   <div className="mt-4 grid gap-2">
                     {curriculumTracks.map((track, index) => (
                       <button
@@ -182,7 +182,7 @@ export default function InstitutionPlatformSection() {
                   className="relative overflow-hidden rounded-2xl border border-teal-200/[0.12] bg-teal-200/[0.06] p-4"
                 >
                   <PlatformGlow opacity={0.5} proximity={110} spread={32} />
-                  <p className="text-xl font-semibold text-white">Core tracks:</p>
+                  <p className="text-xl font-semibold text-white">Core services:</p>
                   <div className="mt-2 flex min-h-8 items-center rounded-xl border border-white/[0.06] bg-black/20 px-3">
                     <p className="truncate text-sm font-bold text-white">
                       {coreTrackTerms[coreTrackIndex].slice(0, typedTrackLength)}
@@ -203,7 +203,7 @@ export default function InstitutionPlatformSection() {
               >
                 <PlatformGlow opacity={0.54} proximity={140} spread={36} />
                 <div className="flex items-center justify-between">
-                  <p className="text-sm font-semibold text-white">Learner progress</p>
+                  <p className="text-sm font-semibold text-white">Project progress</p>
                   <div className="grid grid-cols-2 overflow-hidden rounded-full border border-white/[0.07] bg-white/[0.04] p-0.5">
                     {(['list', 'grid'] as const).map((mode) => (
                       <button
