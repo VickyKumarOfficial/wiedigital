@@ -9,7 +9,7 @@ const ContactPage = lazy(() => import('./pages/ContactPage'))
 const InstitutionsPage = lazy(() => import('./pages/InstitutionsPage'))
 const PlatformPage = lazy(() => import('./pages/PlatformPage'))
 const ProgramsPage = lazy(() => import('./pages/ProgramsPage'))
-const StudentsPage = lazy(() => import('./pages/StudentsPage'))
+const WebsitesPage = lazy(() => import('./pages/WebsitesPage'))
 
 function RouteFallback() {
   return <div className="min-h-[60vh]" />
@@ -29,7 +29,7 @@ export default function App() {
       <Suspense fallback={<RouteFallback />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/students" element={<StudentsPage />} />
+          <Route path="/students" element={<WebsitesPage />} />
           <Route path="/institutions" element={<InstitutionsPage />} />
           <Route path="/platform" element={<PlatformPage />} />
           <Route path="/programs" element={<ProgramsPage />} />
