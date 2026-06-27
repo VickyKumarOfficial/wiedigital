@@ -4,12 +4,12 @@ export default function ProgramsPage() {
   return (
     <main>
       <section className="mx-auto w-[min(100%-1.5rem,76rem)] py-20 md:py-28">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-200/65">Programs</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-200/65">Services</p>
         <h1 className="mt-4 max-w-4xl text-balance text-5xl font-bold leading-tight text-white md:text-7xl">
-          AI, CS, IT and IP programs built around projects.
+          Digital services built around business growth.
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
-          Browse Wielearn tracks for classes 6-12, each designed with practical outcomes and classroom delivery in mind.
+          Browse WeDigitize services for websites, apps, SEO and social media presence, each shaped around practical outcomes.
         </p>
       </section>
 

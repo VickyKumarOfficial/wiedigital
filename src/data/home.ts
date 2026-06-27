@@ -35,21 +35,21 @@ export type PlatformFeature = {
 }
 
 export const navItems: NavItem[] = [
-  { name: 'Websites', href: '/students' },
+  { name: 'Websites', href: '/websites' },
   { name: 'Growth', href: '/institutions' },
   { name: 'Workflow', href: '/platform' },
   { name: 'Services', href: '/programs' },
   { name: 'About', href: '/about' },
 ]
 
-export const valuePoints = ['Hands-on curriculum', 'AI-first learning paths', 'LMS/KMS-powered delivery']
+export const valuePoints = ['Clear digital strategy', 'Modern website delivery', 'SEO and social support']
 
 export const pathCards: PathCard[] = [
   {
     title: 'Websites & Apps',
     eyebrow: 'Digital presence',
     description: 'Launch fast, responsive websites and apps that present your business clearly and convert visitors into customers.',
-    href: '/students',
+    href: '/websites',
     cta: 'Start Building',
     features: ['Responsive web design', 'Custom app development', 'Conversion-ready pages'],
   },
@@ -101,10 +101,10 @@ export const platformFeatures: PlatformFeature[] = [
 ]
 
 export const outcomeStats: OutcomeStat[] = [
-  { value: 'Classes 6-12', label: 'student programs' },
-  { value: 'AI + CS + IT + IP', label: 'curriculum focus' },
-  { value: 'Project-based', label: 'learning model' },
-  { value: 'LMS/KMS ready', label: 'institution stack' },
+  { value: 'Websites + Apps', label: 'digital builds' },
+  { value: 'SEO + Social', label: 'growth channels' },
+  { value: 'Conversion-led', label: 'project approach' },
+  { value: 'Launch-ready', label: 'delivery workflow' },
 ]
 
 export const customerLogos: CustomerLogo[] = [

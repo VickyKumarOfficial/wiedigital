@@ -10,16 +10,16 @@ const faqs = [
 
 const websiteMockups = [
   {
-    title: 'Homepage layout',
-    description: 'A clear first screen with brand message, trust points and a strong consultation CTA.',
+    title: 'Homepage preview',
+    description: 'A polished first screen with brand message, trust points and a strong consultation CTA.',
   },
   {
-    title: 'Service page',
-    description: 'Focused sections that explain your offers, process, outcomes and next steps.',
+    title: 'Service page preview',
+    description: 'Built sections that explain your offers, process, outcomes and next steps clearly.',
   },
   {
-    title: 'Contact flow',
-    description: 'Simple forms and conversion points that help visitors reach you without friction.',
+    title: 'Contact flow preview',
+    description: 'A simple conversion path with forms and next steps that help visitors reach you without friction.',
   },
 ]
 
@@ -72,7 +72,7 @@ export default function WebsitesPage() {
       </section>
 
       <section className="mx-auto w-[min(100%-1.5rem,76rem)] py-12">
-        <h2 className="text-3xl font-bold text-white md:text-4xl">Website mockups we plan</h2>
+        <h2 className="text-3xl font-bold text-white md:text-4xl">Website screens we build</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {websiteMockups.map((mockup) => (
             <article className="rounded-[1.5rem] border border-white/[0.08] bg-[#0b0b0d] p-5" key={mockup.title}>

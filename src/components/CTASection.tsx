@@ -99,7 +99,7 @@ export default function CTASection() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-blue-600 px-6 text-base font-semibold text-white shadow-lg shadow-blue-600/25 ring-2 ring-blue-300/25 transition hover:-translate-y-0.5 hover:bg-blue-500"
-              to="/students"
+              to="/websites"
             >
               Book Free Consultation
             </Link>

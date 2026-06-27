@@ -474,7 +474,7 @@ export default function Hero() {
               </div>
               <Link
                 className="group/button inline-flex min-h-12 min-w-40 items-center justify-center rounded-xl px-6 text-base font-semibold text-white/[0.78] transition hover:bg-white/[0.08] hover:text-white"
-                to="/students"
+                to="/websites"
               >
                 <SlidingButtonText defaultText="Explore Services" hoverText="Digital Solutions" />
               </Link>

@@ -3,7 +3,7 @@ export default function ValueSection() {
     // <section id="solution" className="relative mx-auto w-[min(100%-1.5rem,64rem)] py-12 md:py-20">
     //   <div className="rounded-[2rem] border border-white/[0.08] bg-white/[0.025] p-6 text-center md:p-8">
     //     <h2 className="text-balance text-3xl font-bold tracking-normal text-white md:text-4xl">
-    //       Learning programs backed by platform infrastructure
+    //       Digital services backed by clear strategy
     //     </h2>
     //     <div className="mt-8 grid gap-3 md:grid-cols-3">
     //       {valuePoints.map((point) => (
