@@ -467,7 +467,7 @@ export default function Hero() {
               <div className="rounded-[1.05rem] border border-white/10 bg-white/[0.08] p-1">
                 <Link
                   className="group/button inline-flex min-h-12 min-w-45 items-center justify-center rounded-xl bg-white px-6 text-base font-semibold text-zinc-950 shadow-xl shadow-black/25 transition hover:-translate-y-0.5 hover:bg-zinc-100"
-                  to="/institutions"
+                  to="/growth"
                 >
                   <SlidingButtonText defaultText="Build Presence" hoverText="Free Consultation" />
                 </Link>

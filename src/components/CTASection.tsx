@@ -105,7 +105,7 @@ export default function CTASection() {
             </Link>
             <Link
               className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-white px-6 text-base font-semibold text-zinc-950 shadow-lg shadow-black/25 transition hover:-translate-y-0.5 hover:bg-zinc-100"
-              to="/institutions"
+              to="/growth"
             >
               Explore Services
             </Link>

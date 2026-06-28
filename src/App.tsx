@@ -6,7 +6,7 @@ import HomePage from './pages/HomePage'
 
 const AboutPage = lazy(() => import('./pages/AboutPage'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
-const InstitutionsPage = lazy(() => import('./pages/InstitutionsPage'))
+const GrowthPage = lazy(() => import('./pages/GrowthPage'))
 const PlatformPage = lazy(() => import('./pages/PlatformPage'))
 const ProgramsPage = lazy(() => import('./pages/ProgramsPage'))
 const WebsitesPage = lazy(() => import('./pages/WebsitesPage'))
@@ -31,7 +31,8 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/websites" element={<WebsitesPage />} />
           <Route path="/students" element={<WebsitesPage />} />
-          <Route path="/institutions" element={<InstitutionsPage />} />
+          <Route path="/growth" element={<GrowthPage />} />
+          <Route path="/institutions" element={<GrowthPage />} />
           <Route path="/platform" element={<PlatformPage />} />
           <Route path="/programs" element={<ProgramsPage />} />
           <Route path="/about" element={<AboutPage />} />

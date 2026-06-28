@@ -36,7 +36,7 @@ export type PlatformFeature = {
 
 export const navItems: NavItem[] = [
   { name: 'Websites', href: '/websites' },
-  { name: 'Growth', href: '/institutions' },
+  { name: 'Growth', href: '/growth' },
   { name: 'Workflow', href: '/platform' },
   { name: 'Services', href: '/programs' },
   { name: 'About', href: '/about' },
@@ -57,7 +57,7 @@ export const pathCards: PathCard[] = [
     title: 'SEO & Social Media',
     eyebrow: 'Online growth',
     description: 'Improve discoverability, manage social handles, and build a consistent brand presence across digital channels.',
-    href: '/institutions',
+    href: '/growth',
     cta: 'Grow Online',
     features: ['SEO strategy', 'Social media handles', 'Digital brand support'],
   },
