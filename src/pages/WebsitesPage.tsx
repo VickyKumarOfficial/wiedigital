@@ -58,63 +58,7 @@ export default function WebsitesPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-[min(100%-1.5rem,76rem)] py-12">
-        <h2 className="text-3xl font-bold text-white md:text-4xl">How we build your website</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {learningExperience.map((step) => (
-            <article className="rounded-[1.5rem] border border-white/[0.08] bg-white/[0.035] p-5" key={step.title}>
-              <p className="text-sm font-bold text-violet-100">{step.metric}</p>
-              <h3 className="mt-4 text-xl font-bold text-white">{step.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-zinc-400">{step.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto w-[min(100%-1.5rem,76rem)] py-12">
-        <h2 className="text-3xl font-bold text-white md:text-4xl">Website screens we build</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {websiteMockups.map((mockup) => (
-            <article className="rounded-[1.5rem] border border-white/[0.08] bg-[#0b0b0d] p-5" key={mockup.title}>
-              <div className="rounded-2xl border border-white/[0.06] bg-white/[0.035] p-4">
-                <div className="h-3 w-2/3 rounded-full bg-white/[0.12]" />
-                <div className="mt-4 h-20 rounded-xl bg-gradient-to-br from-teal-200/[0.16] to-violet-200/[0.12]" />
-                <div className="mt-4 grid gap-2">
-                  <div className="h-2 rounded-full bg-white/[0.08]" />
-                  <div className="h-2 w-3/4 rounded-full bg-white/[0.06]" />
-                </div>
-              </div>
-              <h3 className="mt-5 text-xl font-bold text-white">{mockup.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-zinc-400">{mockup.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto w-[min(100%-1.5rem,76rem)] py-12">
-        <h2 className="text-3xl font-bold text-white md:text-4xl">Related digital services</h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {programs.map((program) => (
-            <article className="rounded-[1.5rem] border border-white/[0.08] bg-[#0b0b0d] p-5" key={program.title}>
-              <h3 className="text-xl font-bold text-white">{program.title}</h3>
-              <p className="mt-2 text-sm font-semibold text-teal-100/70">{program.level}</p>
-              <p className="mt-4 text-sm leading-6 text-zinc-400">{program.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto w-[min(100%-1.5rem,76rem)] py-12 pb-24">
-        <h2 className="text-3xl font-bold text-white md:text-4xl">FAQ</h2>
-        <div className="mt-6 grid gap-3">
-          {faqs.map(([question, answer]) => (
-            <details className="rounded-2xl border border-white/[0.08] bg-white/[0.035] p-5" key={question}>
-              <summary className="cursor-pointer font-bold text-white">{question}</summary>
-              <p className="mt-3 text-sm leading-6 text-zinc-400">{answer}</p>
-            </details>
-          ))}
-        </div>
-      </section>
+      
     </main>
   )
 }

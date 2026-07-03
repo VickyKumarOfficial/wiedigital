@@ -1,3 +1,6 @@
+import heroStyle from '../assets/Hero_style.webp'
+
+
 export type NavItem = {
   name: string
   href: string
@@ -122,8 +125,9 @@ export const customerLogos: CustomerLogo[] = [
   { name: 'OpenAI', src: 'https://html.tailus.io/blocks/customers/openai.svg', height: 'h-6' },
 ]
 
+
 export const heroImages = {
   background:
     'https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120',
-  dashboard: 'https://tailark.com//_next/image?url=%2Fmail2.png&w=3840&q=75',
+  dashboard: heroStyle,
 }
