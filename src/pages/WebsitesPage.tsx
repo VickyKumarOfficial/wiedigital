@@ -35,23 +35,23 @@ const websiteProjects = [
   {
     title: 'Local Business Website',
     description: 'A conversion-focused website structure for service businesses that need trust, clarity and quick contact paths.',
-    href: 'https://example.com',
+    href: '#',
+    imageSrc: '',
     tags: ['Website', 'SEO', 'Lead gen'],
-    accent: 'from-cyan-300/28 via-blue-500/14 to-transparent',
   },
   {
     title: 'Founder Portfolio',
     description: 'A sharp personal brand site with project highlights, credentials and a streamlined inquiry experience.',
-    href: 'https://example.com',
+    href: '#',
+    imageSrc: '',
     tags: ['Portfolio', 'Brand', 'Responsive'],
-    accent: 'from-emerald-300/24 via-teal-500/12 to-transparent',
   },
   {
     title: 'Product Landing Page',
     description: 'A launch-ready landing page built around positioning, proof points, benefits and a clear primary CTA.',
-    href: 'https://example.com',
+    href: '#',
+    imageSrc: '',
     tags: ['Landing page', 'Copy', 'Launch'],
-    accent: 'from-rose-300/22 via-orange-400/12 to-transparent',
   },
 ]
 
@@ -104,37 +104,20 @@ export default function WebsitesPage() {
               className="group grid min-h-[30rem] grid-rows-[1fr_1fr] overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-[#0b0b0d] transition hover:-translate-y-1 hover:border-white/[0.16]"
               key={project.title}
             >
-              <div className="relative overflow-hidden bg-[#121215] p-4">
-                <div className={`absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,var(--tw-gradient-stops))] ${project.accent}`} />
-                <div className="relative h-full rounded-2xl border border-white/[0.08] bg-black/30 p-3 shadow-2xl shadow-black/25">
-                  <div className="flex gap-1.5">
-                    <span className="h-2.5 w-2.5 rounded-full bg-red-300/70" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-amber-200/70" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-300/70" />
+              <div className="overflow-hidden bg-[#121215]">
+                {project.imageSrc ? (
+                  <img className="h-full w-full object-cover" src={project.imageSrc} alt={`${project.title} screenshot`} />
+                ) : (
+                  <div className="grid h-full min-h-60 place-items-center border-b border-white/[0.08] bg-[#101012] text-sm font-semibold text-zinc-600">
+                    Project screenshot placeholder
                   </div>
-                  <div className="mt-5 h-8 w-3/4 rounded-xl bg-white/12" />
-                  <div className="mt-4 grid grid-cols-[1fr_0.58fr] gap-3">
-                    <div className="h-24 rounded-2xl bg-white/[0.08]" />
-                    <div className="grid gap-2">
-                      <div className="rounded-xl bg-white/[0.07]" />
-                      <div className="rounded-xl bg-white/[0.045]" />
-                    </div>
-                  </div>
-                  <div className="mt-4 grid grid-cols-3 gap-2">
-                    <div className="h-12 rounded-xl bg-white/[0.055]" />
-                    <div className="h-12 rounded-xl bg-white/[0.075]" />
-                    <div className="h-12 rounded-xl bg-white/[0.05]" />
-                  </div>
-                </div>
+                )}
               </div>
 
               <div className="flex flex-col p-5">
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
-                    <span
-                      className="rounded-full border border-lime-300/65 bg-lime-300/[0.06] px-3.5 py-1.5 text-xs font-bold uppercase tracking-wide text-lime-200 shadow-[0_0_18px_rgba(190,242,100,0.08)]"
-                      key={tag}
-                    >
+                    <span className="rounded-full bg-white/[0.06] px-3 py-1 text-xs font-semibold text-zinc-400" key={tag}>
                       {tag}
                     </span>
                   ))}
@@ -144,7 +127,7 @@ export default function WebsitesPage() {
                   <h3 className="text-2xl font-bold leading-tight text-white">{project.title}</h3>
                   <a
                     aria-label={`Open ${project.title}`}
-                    className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/[0.12] bg-white/[0.045] text-zinc-300 transition hover:border-lime-300 hover:bg-lime-300/[0.08] hover:text-lime-200 hover:shadow-[0_0_0_4px_rgba(190,242,100,0.12)]"
+                    className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/[0.12] bg-white/[0.045] text-zinc-300 transition hover:text-lime-300"
                     href={project.href}
                     rel="noreferrer"
                     target="_blank"
