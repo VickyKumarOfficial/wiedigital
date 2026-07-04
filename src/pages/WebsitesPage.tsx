@@ -1,12 +1,4 @@
 import { Link } from 'react-router-dom'
-import { learningExperience } from '../data/home'
-import { programs } from '../data/programs'
-
-const faqs = [
-  ['What kind of websites do you build?', 'We build modern business websites, landing pages, portfolios and service pages for startups and small businesses.'],
-  ['Will the website work on mobile?', 'Yes. Every website is planned for responsive layouts, fast loading and clear customer journeys across devices.'],
-  ['Can you help with copy and SEO?', 'Yes. We can shape page structure, website copy and SEO basics so your site is ready for search and conversion.'],
-]
 
 const websiteMockups = [
   {
@@ -26,14 +18,47 @@ const websiteMockups = [
 const websiteStats = [
   { value: 'Responsive', label: 'mobile-first layouts' },
   { value: 'SEO-ready', label: 'search-friendly structure' },
-  { value: 'Conversion-led', label: 'clear customer journey' },
-  { value: 'Fast launch', label: 'focused delivery plan' },
+]
+
+const websiteHighlights = [
+  ...websiteStats.map((stat) => ({
+    title: stat.value,
+    description: stat.label,
+  })),
+  ...websiteMockups.map((mockup) => ({
+    title: mockup.title,
+    description: mockup.description,
+  })),
+]
+
+const websiteProjects = [
+  {
+    title: 'Local Business Website',
+    description: 'A conversion-focused website structure for service businesses that need trust, clarity and quick contact paths.',
+    href: 'https://example.com',
+    tags: ['Website', 'SEO', 'Lead gen'],
+    accent: 'from-cyan-300/28 via-blue-500/14 to-transparent',
+  },
+  {
+    title: 'Founder Portfolio',
+    description: 'A sharp personal brand site with project highlights, credentials and a streamlined inquiry experience.',
+    href: 'https://example.com',
+    tags: ['Portfolio', 'Brand', 'Responsive'],
+    accent: 'from-emerald-300/24 via-teal-500/12 to-transparent',
+  },
+  {
+    title: 'Product Landing Page',
+    description: 'A launch-ready landing page built around positioning, proof points, benefits and a clear primary CTA.',
+    href: 'https://example.com',
+    tags: ['Landing page', 'Copy', 'Launch'],
+    accent: 'from-rose-300/22 via-orange-400/12 to-transparent',
+  },
 ]
 
 export default function WebsitesPage() {
   return (
     <main>
-      <section className="mx-auto grid w-[min(100%-1.5rem,76rem)] gap-10 py-20 md:grid-cols-[1fr_0.8fr] md:py-28">
+      <section className="mx-auto grid w-[min(100%-1.5rem,76rem)] gap-10 py-20 md:grid-cols-[1fr_0.86fr] md:py-28">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-200/65">Websites</p>
           <h1 className="mt-4 text-balance text-5xl font-bold leading-tight text-white md:text-7xl">
@@ -46,19 +71,98 @@ export default function WebsitesPage() {
             Start Website Project
           </Link>
         </div>
-        <div className="rounded-[2rem] border border-white/[0.08] bg-white/[0.035] p-5">
-          <div className="grid gap-3">
-            {websiteStats.map((stat) => (
-              <div className="rounded-2xl bg-black/25 p-4" key={stat.value}>
-                <p className="font-bold text-white">{stat.value}</p>
-                <p className="mt-1 text-sm text-zinc-500">{stat.label}</p>
-              </div>
-            ))}
-          </div>
+
+        <div className="flex min-h-[31.5rem] flex-col gap-3 rounded-[2rem] border border-white/[0.08] bg-white/[0.035] p-5">
+          {websiteHighlights.map((item) => (
+            <article
+              className="flex flex-1 flex-col justify-center rounded-2xl border border-white/[0.07] bg-[#0b0b0d] px-4 py-3"
+              key={item.title}
+            >
+              <h2 className="text-base font-bold text-white">{item.title}</h2>
+              <p className="mt-1.5 text-sm leading-6 text-zinc-500">{item.description}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      
+      <section className="mx-auto w-[min(100%-1.5rem,76rem)] pb-20 md:pb-28">
+        <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-200/65">Projects</p>
+            <h2 className="mt-3 max-w-2xl text-balance text-4xl font-bold tracking-normal text-white md:text-5xl">
+              Website work shaped for real business outcomes.
+            </h2>
+          </div>
+          <Link className="w-fit rounded-full border border-white/[0.1] px-5 py-2 text-sm font-bold text-white transition hover:bg-white/[0.08]" to="/contact">
+            Start yours
+          </Link>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {websiteProjects.map((project) => (
+            <article
+              className="group grid min-h-[30rem] grid-rows-[1fr_1fr] overflow-hidden rounded-[1.5rem] border border-white/[0.08] bg-[#0b0b0d] transition hover:-translate-y-1 hover:border-white/[0.16]"
+              key={project.title}
+            >
+              <div className="relative overflow-hidden bg-[#121215] p-4">
+                <div className={`absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,var(--tw-gradient-stops))] ${project.accent}`} />
+                <div className="relative h-full rounded-2xl border border-white/[0.08] bg-black/30 p-3 shadow-2xl shadow-black/25">
+                  <div className="flex gap-1.5">
+                    <span className="h-2.5 w-2.5 rounded-full bg-red-300/70" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-amber-200/70" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-300/70" />
+                  </div>
+                  <div className="mt-5 h-8 w-3/4 rounded-xl bg-white/12" />
+                  <div className="mt-4 grid grid-cols-[1fr_0.58fr] gap-3">
+                    <div className="h-24 rounded-2xl bg-white/[0.08]" />
+                    <div className="grid gap-2">
+                      <div className="rounded-xl bg-white/[0.07]" />
+                      <div className="rounded-xl bg-white/[0.045]" />
+                    </div>
+                  </div>
+                  <div className="mt-4 grid grid-cols-3 gap-2">
+                    <div className="h-12 rounded-xl bg-white/[0.055]" />
+                    <div className="h-12 rounded-xl bg-white/[0.075]" />
+                    <div className="h-12 rounded-xl bg-white/[0.05]" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col p-5">
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      className="rounded-full border border-lime-300/65 bg-lime-300/[0.06] px-3.5 py-1.5 text-xs font-bold uppercase tracking-wide text-lime-200 shadow-[0_0_18px_rgba(190,242,100,0.08)]"
+                      key={tag}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-5 flex items-start justify-between gap-4">
+                  <h3 className="text-2xl font-bold leading-tight text-white">{project.title}</h3>
+                  <a
+                    aria-label={`Open ${project.title}`}
+                    className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/[0.12] bg-white/[0.045] text-zinc-300 transition hover:border-lime-300 hover:bg-lime-300/[0.08] hover:text-lime-200 hover:shadow-[0_0_0_4px_rgba(190,242,100,0.12)]"
+                    href={project.href}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                  </a>
+                </div>
+
+                <p className="mt-auto pt-5 text-sm leading-6 text-zinc-400">{project.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
     </main>
   )
 }
