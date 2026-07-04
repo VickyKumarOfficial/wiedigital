@@ -33,25 +33,53 @@ const websiteHighlights = [
 
 const websiteProjects = [
   {
-    title: 'Local Business Website',
-    description: 'A conversion-focused website structure for service businesses that need trust, clarity and quick contact paths.',
+    title: 'Aiforkids',
+    description: 'An AI-focused learning experience built to make modern technology feel approachable, useful and engaging for young learners.',
     href: '#',
     imageSrc: '',
-    tags: ['Website', 'SEO', 'Lead gen'],
+    tags: ['Edtech', 'AI', 'Learning'],
   },
   {
-    title: 'Founder Portfolio',
-    description: 'A sharp personal brand site with project highlights, credentials and a streamlined inquiry experience.',
+    title: 'Wielearn',
+    description: 'An educational platform designed around interactive content, student engagement and smart learning experiences.',
     href: '#',
     imageSrc: '',
-    tags: ['Portfolio', 'Brand', 'Responsive'],
+    tags: ['Edtech', 'Branding', 'Platform'],
   },
   {
-    title: 'Product Landing Page',
-    description: 'A launch-ready landing page built around positioning, proof points, benefits and a clear primary CTA.',
+    title: 'Cookwithfem',
+    description: 'A food and recipe presence crafted for clear content discovery, warm branding and simple audience interaction.',
     href: '#',
     imageSrc: '',
-    tags: ['Landing page', 'Copy', 'Launch'],
+    tags: ['Food', 'Content', 'Branding'],
+  },
+  {
+    title: 'Highway Project',
+    description: 'A structured project website concept for presenting route details, updates, milestones and public-facing information clearly.',
+    href: '#',
+    imageSrc: '',
+    tags: ['Infrastructure', 'Website', 'Information'],
+  },
+  {
+    title: 'Arcade Learn',
+    description: 'An arcade-style digital learning experience blending playful interaction with modern education-focused design principles.',
+    href: '#',
+    imageSrc: '',
+    tags: ['Edtech', 'Game based', 'Interactive'],
+  },
+  {
+    title: 'Niera AI',
+    description: 'An AI product presence shaped around a clean interface, strong positioning and a focused product story.',
+    href: '#',
+    imageSrc: '',
+    tags: ['AI', 'Product', 'SaaS'],
+  },
+  {
+    title: 'APS RKP',
+    description: 'A school-focused website experience for presenting academics, updates, admissions and institutional identity.',
+    href: '#',
+    imageSrc: '',
+    tags: ['School', 'Website', 'Institution'],
   },
 ]
 
@@ -93,9 +121,6 @@ export default function WebsitesPage() {
               Website work shaped for real business outcomes.
             </h2>
           </div>
-          <Link className="w-fit rounded-full border border-white/[0.1] px-5 py-2 text-sm font-bold text-white transition hover:bg-white/[0.08]" to="/contact">
-            Start yours
-          </Link>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
