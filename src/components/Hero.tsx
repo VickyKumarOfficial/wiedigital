@@ -223,7 +223,7 @@ function XIcon({ className = '' }: { className?: string }) {
 
 function Logo() {
   return (
-    <img className="h-8 w-auto" src={logoDark} alt="WeDigitize" />
+    <img className="h-8 w-auto" src={logoDark} alt="Wiedigital" />
   )
 }
 
@@ -284,11 +284,11 @@ function SlidingButtonTextVertical({ defaultText, hoverText }: { defaultText: st
 
 function SlidingButtonTextHorizontal({ defaultText, hoverText }: { defaultText: string; hoverText: string }) {
   return (
-    <span className="relative inline-grid h-[1.4em] min-w-full overflow-hidden">
-      <span className="flex w-full justify-center whitespace-nowrap transition-transform duration-300 ease-out group-hover/button:-translate-x-full">
+    <span className="relative inline-flex h-[1.4em] min-w-0 overflow-hidden">
+      <span className="flex whitespace-nowrap transition-transform duration-300 ease-out group-hover/button:-translate-x-full">
         {defaultText}
       </span>
-      <span className="absolute inset-0 flex translate-x-full justify-center whitespace-nowrap transition-transform duration-300 ease-out group-hover/button:translate-x-0">
+      <span className="absolute inset-x-0 top-0 flex whitespace-nowrap translate-x-full transition-transform duration-300 ease-out group-hover/button:translate-x-0">
         {hoverText}
       </span>
     </span>
@@ -369,7 +369,7 @@ export default function Hero() {
                 : 'min-h-16 rounded-[1.35rem] border-transparent bg-transparent px-4',
             ].join(' ')}
           >
-            <Link to="/" aria-label="WeDigitize home">
+            <Link to="/" aria-label="Wiedigital home">
               <Logo />
             </Link>
 
@@ -466,7 +466,7 @@ export default function Hero() {
             <div className="animate-hero-rise mt-12 flex flex-col items-center justify-center gap-3 [animation-delay:260ms] sm:flex-row">
               <div className="rounded-[1.05rem] border border-white/10 bg-white/[0.08] p-1">
                 <Link
-                  className="group/button inline-flex min-h-12 min-w-45 items-center justify-center rounded-xl bg-white px-6 text-base font-semibold text-zinc-950 shadow-xl shadow-black/25 transition hover:-translate-y-0.5 hover:bg-zinc-100"
+                  className="group/button inline-flex min-h-12 min-w-52 items-center justify-center rounded-xl bg-white px-6 text-base font-semibold text-zinc-950 shadow-xl shadow-black/25 transition hover:-translate-y-0.5 hover:bg-zinc-100"
                   to="/growth"
                 >
                   <SlidingButtonText defaultText="Build Presence" hoverText="Free Consultation" />

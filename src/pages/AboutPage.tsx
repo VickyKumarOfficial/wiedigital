@@ -4,12 +4,12 @@ export default function AboutPage() {
   return (
     <main>
       <section className="mx-auto w-[min(100%-1.5rem,76rem)] py-20 md:py-28">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-violet-200/65">About WeDigitize</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-violet-200/65">About Wiedigital</p>
         <h1 className="mt-4 max-w-4xl text-balance text-5xl font-bold leading-tight text-white md:text-7xl">
           We help businesses build digital presence and grow with confidence.
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
-          WeDigitize exists to make websites, apps, SEO and social media feel clear, useful and growth-focused.
+          Wiedigital exists to make websites, apps, SEO and social media feel clear, useful and growth-focused.
         </p>
       </section>
 

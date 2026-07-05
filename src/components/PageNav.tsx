@@ -4,7 +4,7 @@ import { navItems } from '../data/home'
 
 function Logo() {
   return (
-    <img className="h-8 w-auto" src={logoDark} alt="WeDigitize" />
+    <img className="h-8 w-auto" src={logoDark} alt="Wiedigital" />
   )
 }
 
@@ -12,7 +12,7 @@ export default function PageNav() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/[0.06] bg-[#050507]/80 backdrop-blur-xl">
       <nav className="mx-auto flex min-h-16 w-[min(100%-1.5rem,76rem)] items-center justify-between gap-6" aria-label="Page navigation">
-        <Link to="/" aria-label="WeDigitize home">
+        <Link to="/" aria-label="Wiedigital home">
           <Logo />
         </Link>
 

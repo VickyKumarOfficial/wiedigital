@@ -5,7 +5,7 @@ export default function ContactPage() {
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-teal-200/65">Contact</p>
           <h1 className="mt-4 text-balance text-5xl font-bold leading-tight text-white md:text-7xl">
-            Start your digital project with WeDigitize.
+            Start your digital project with Wiedigital.
           </h1>
           <p className="mt-6 text-lg leading-8 text-zinc-400">
             Tell us what you need, from a new website to SEO, apps or social media support.

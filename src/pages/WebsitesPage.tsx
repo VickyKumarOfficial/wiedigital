@@ -93,7 +93,7 @@ export default function WebsitesPage() {
             Modern websites that make your business easier to trust.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
-            WeDigitize designs responsive websites that present your brand clearly, guide customers smoothly and support your online growth.
+            Wiedigital designs responsive websites that present your brand clearly, guide customers smoothly and support your online growth.
           </p>
           <Link className="mt-8 inline-flex rounded-2xl bg-white px-6 py-3 font-bold text-zinc-950 transition hover:bg-zinc-100" to="/contact">
             Start Website Project

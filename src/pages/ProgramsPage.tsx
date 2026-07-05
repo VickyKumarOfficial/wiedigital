@@ -9,7 +9,7 @@ export default function ProgramsPage() {
           Digital services built around business growth.
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
-          Browse WeDigitize services for websites, apps, SEO and social media presence, each shaped around practical outcomes.
+          Browse Wiedigital services for websites, apps, SEO and social media presence, each shaped around practical outcomes.
         </p>
       </section>
 

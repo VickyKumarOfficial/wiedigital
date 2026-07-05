@@ -20,7 +20,7 @@ export default function ChoosePathSection() {
           </h2>
         </div>
         <p className="max-w-md text-sm leading-6 text-zinc-400">
-          From websites and apps to SEO and social media, WeDigitize helps brands build a stronger online presence.
+          From websites and apps to SEO and social media, Wiedigital helps brands build a stronger online presence.
         </p>
       </div>
 

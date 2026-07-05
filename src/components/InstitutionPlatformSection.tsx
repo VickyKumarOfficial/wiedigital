@@ -155,7 +155,7 @@ export default function InstitutionPlatformSection() {
                 <span className="h-2.5 w-2.5 rounded-full bg-violet-200/60" />
                 <span className="h-2.5 w-2.5 rounded-full bg-white/35" />
               </div>
-              <span className="text-xs font-semibold text-zinc-500">WeDigitize workspace</span>
+              <span className="text-xs font-semibold text-zinc-500">Wiedigital workspace</span>
             </div>
 
             <div className="grid min-h-80 gap-3 p-4 md:grid-cols-[0.8fr_1.2fr]">

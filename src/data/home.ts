@@ -40,7 +40,7 @@ export type PlatformFeature = {
 export const navItems: NavItem[] = [
   { name: 'Websites', href: '/websites' },
   { name: 'Growth', href: '/growth' },
-  { name: 'Workflow', href: '/platform' },
+  // { name: 'Workflow', href: '/platform' },
   { name: 'Services', href: '/programs' },
   { name: 'About', href: '/about' },
 ]
@@ -107,7 +107,7 @@ export const outcomeStats: OutcomeStat[] = [
   { value: 'Websites + Apps', label: 'digital builds' },
   { value: 'SEO + Social', label: 'growth channels' },
   { value: 'Conversion-led', label: 'project approach' },
-  { value: 'Launch-ready', label: 'delivery workflow' },
+  // { value: 'Launch-ready', label: 'delivery workflow' },
 ]
 
 export const customerLogos: CustomerLogo[] = [

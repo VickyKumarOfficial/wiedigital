@@ -4,7 +4,7 @@ import { platformFeatures } from '../data/home'
 const implementationSteps = ['Map goals and channels', 'Set up the growth workflow', 'Launch, review and improve']
 
 const growthChannels = [
-  { label: 'SEO', value: '84%' },
+  { label: 'SEO', value: '94%' },
   { label: 'Social', value: '12 posts' },
   { label: 'Content', value: '6 assets' },
 ]
@@ -29,7 +29,7 @@ export default function GrowthPage() {
             Grow your online presence with a clear digital workflow.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
-            WeDigitize helps businesses plan websites, manage content, improve SEO and keep social channels active.
+            Wiedigital helps businesses plan websites, manage content, improve SEO and keep social channels active.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link className="inline-flex rounded-2xl bg-white px-6 py-3 font-bold text-zinc-950 transition hover:bg-zinc-100" to="/contact">
