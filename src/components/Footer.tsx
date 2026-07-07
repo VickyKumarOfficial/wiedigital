@@ -69,7 +69,7 @@ const socialLinks = [
 
 function FooterLogo() {
   return (
-    <img className="h-10 w-auto" src={logoDark} alt="WeDigitize" />
+    <img className="h-10 w-auto" src={logoDark} alt="Wiedigital" />
   )
 }
 
@@ -79,7 +79,7 @@ export default function Footer() {
       <div className="relative z-10 mx-auto grid w-[min(100%-2rem,76rem)] gap-12 pt-20 pb-56 md:grid-cols-[1.05fr_1.6fr] md:pt-24 md:pb-64">
         <div>
           <FooterLogo />
-          <p className="mt-6 text-sm text-zinc-500">© copyright WeDigitize {new Date().getFullYear()}. All rights reserved.</p>
+          <p className="mt-6 text-sm text-zinc-500">© copyright Wiedigital {new Date().getFullYear()}. All rights reserved.</p>
 
           <div className="mt-8">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500">Social Media Handles</p>
@@ -125,7 +125,7 @@ export default function Footer() {
         className="pointer-events-none absolute inset-x-0 bottom-[22px] select-none text-center text-[18vw] font-black leading-none tracking-[-0.05em] text-white/[0.045]"
         aria-hidden="true"
       >
-        WeDigitize.
+        Wiedigital.
       </div>
     </footer>
   )
